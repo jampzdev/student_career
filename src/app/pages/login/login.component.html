@@ -1,0 +1,131 @@
+<div class="login">
+
+    <!-- Login -->
+    <div *ngIf="loginStats.login" class="login__block active">
+        <div class="login-custom-header">
+            <h1>Library System v1.0</h1>
+            <!-- <img src="../../../assets/img/ama-logo.png" alt="" height="60%" width="60%"> -->
+        </div>
+
+        <div class="login__body">
+            <div class="form-group form-group--float form-group--centered">
+                <input type="text" class="form-control" [(ngModel)]="uname" InputFloat>
+                <label>USERNAME</label>
+                <i class="form-group__bar"></i>
+            </div>
+
+            <div class="form-group form-group--float form-group--centered">
+                <input type="password" class="form-control" [(ngModel)]="pwd" InputFloat>
+                <label>PASSWORD</label>
+                <i class="form-group__bar"></i>
+            </div>
+        </div>
+
+        <div class="login-custom-footer">
+            <button type="button" class="btn btn-ama-custom-red btn-shadow m-b-10" (click)="auth()">LOGIN</button>
+            <button type="button" class="btn btn-primary btn-shadow m-b-10" (click)="toggleBlock('login', 'signUp')">SIGN UP AS BORROWER</button>
+        </div>
+    </div>
+
+    <!-- Register -->
+    <div *ngIf="loginStats.signUp" class="login__block">
+        <div class="login-custom-header">
+            <!-- <img src="../../../assets/img/ama-logo.png" alt="" height="60%" width="60%"> -->
+        </div>
+
+        <div class="login__body" style="text-align: left">
+            <div class="form-group form-group--float">
+                <input type="text" class="form-control" [(ngModel)]="new_fname" maxlength="100" InputFloat>
+                <label>FIRST NAME<span class="c-red">*</span></label>
+                <i class="form-group__bar"></i>
+            </div>
+
+            <div class="form-group form-group--float">
+                <input type="text" class="form-control" [(ngModel)]="new_lname" maxlength="100" InputFloat>
+                <label>LAST NAME<span class="c-red">*</span></label>
+                <i class="form-group__bar"></i>
+            </div>
+
+            <div class="form-group form-group--float">
+                <input type="text" class="form-control" [(ngModel)]="new_uname" maxlength="50" InputFloat>
+                <label>USERNAME<span class="c-red">*</span></label>
+                <i class="form-group__bar"></i>
+            </div>
+
+            <div class="form-group form-group--float">
+                <input type="password" class="form-control" [(ngModel)]="new_pwd" maxlength="50" InputFloat>
+                <label>PASSWORD<span class="c-red">*</span></label>
+                <i class="form-group__bar"></i>
+            </div>
+
+            <div class="form-group form-group--float">
+                <input type="password" class="form-control" [(ngModel)]="new_confirm_pwd" InputFloat>
+                <label>CONFIRM PASSWORD<span class="c-red">*</span></label>
+                <i class="form-group__bar"></i>
+            </div>
+        </div>
+
+        <div class="login-custom-footer">
+            <p>By signing up, you agree to the <br>
+            <a (click)="termsAndConditionsModal.show()" style="color: #0062d1"><b>Terms and Conditions</b></a> 
+            </p>
+            
+            <button type="button" class="btn btn-ama-custom-purple btn-shadow m-b-10">SIGN UP</button>
+            <br>
+            <a (click)="toggleBlock('signUp', 'login')">Already have an account?</a>
+        </div>
+    </div>
+
+    <!-- Forgot Password -->
+    <div *ngIf="loginStats.forgotPassword" class="login__block">
+        <div class="login-custom-header">
+            <img src="../../../assets/img/ama-logo.png" alt="" height="60%" width="60%">
+        </div>
+
+        <div class="login__body">
+            <p class="mt-4">Instructions on how to recover your account will be sent to your email.</p>
+
+            <div class="form-group form-group--float form-group--centered">
+                <input type="text" class="form-control" InputFloat>
+                <label>EMAIL ADDRESS</label>
+                <i class="form-group__bar"></i>
+            </div>
+        </div>
+
+        <div class="login-custom-footer">
+            <button type="button" class="btn btn-ama-custom-red btn-shadow m-b-10" [routerLink]="['/user/dashboard']">CONFIRM EMAIL</button>
+            <br>
+            <a (click)="toggleBlock('forgotPassword', 'login')">Go back to Login</a>
+        </div>
+    </div>
+</div>
+
+
+<!-- Terms and Conditions Modal-->
+<div class="modal fade" bsModal #termsAndConditionsModal="bs-modal" tabindex="-1" role="dialog" aria-labelledby="dialog-static-name" [config]="{ ignoreBackdropClick: true }">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Default modal</h4>
+            </div>
+            <div class="modal-body">
+                <p>Curabitur blandit mollis lacus. Nulla sit amet est. Suspendisse nisl elit, rhoncus eget, elementum
+                    ac, condimentum eget, diam. Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi. Cras
+                    sagittis..</p>
+                <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam id dolor id nibh
+                    ultricies vehicula ut id elit. Donec sed odio dui. Sed posuere consectetur est at lobortis. Maecenas
+                    sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor
+                    fringilla. Aenean lacinia bibendum nulla sed consectetur. Nullam quis risus eget urna mollis ornare
+                    vel eu leo. Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor.
+                    Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum. Sed posuere
+                    consectetur est at lobortis. Maecenas faucibus mollis interdum.</p>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-button">
+                    <button type="button" class="btn btn-light btn-sm btn-shadow pull-right" (click)="termsAndConditionsModal.hide()">CANCEL</button>
+                    <button type="button" class="btn btn-ama-custom-purple btn-sm btn-shadow m-r-20 pull-right">SAVE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,729 @@
+// Variables
+@import "./assets/scss/variables";
+@import "./assets/scss/mixins";
+@import "./assets/scss/scss-imports";
+
+
+// Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+// Site Styles
+@import "./assets/scss/fonts";
+@import "./assets/scss/base";
+@import "./assets/scss/utilities";
+@import "./assets/scss/layout";
+@import "./assets/scss/misc";
+@import "./assets/scss/listview";
+@import "./assets/scss/todo";
+@import "./assets/scss/forms/toggle-switch";
+@import "./assets/scss/forms/icon-toggles";
+@import "./assets/scss/toolbars";
+@import "./assets/scss/photos";
+@import "./assets/scss/contacts";
+@import "./assets/scss/login";
+@import "./assets/scss/theme";
+
+
+// Bootstrap Overrides
+@import "./assets/scss/bootstrap-overrides/buttons";
+@import "./assets/scss/bootstrap-overrides/dropdown";
+@import "./assets/scss/bootstrap-overrides/progress";
+@import "./assets/scss/bootstrap-overrides/card";
+@import "./assets/scss/bootstrap-overrides/buttons";
+@import "./assets/scss/bootstrap-overrides/tables";
+@import "./assets/scss/bootstrap-overrides/forms";
+@import "./assets/scss/bootstrap-overrides/input-groups";
+@import "./assets/scss/bootstrap-overrides/custom-forms";
+@import "./assets/scss/bootstrap-overrides/pagination";
+@import "./assets/scss/bootstrap-overrides/alerts";
+@import "./assets/scss/bootstrap-overrides/close";
+@import "./assets/scss/bootstrap-overrides/breadcrumbs";
+@import "./assets/scss/bootstrap-overrides/collapse";
+@import "./assets/scss/bootstrap-overrides/carousel";
+@import "./assets/scss/bootstrap-overrides/modal";
+@import "./assets/scss/bootstrap-overrides/popovers";
+@import "./assets/scss/bootstrap-overrides/tabs";
+@import "./assets/scss/bootstrap-overrides/tooltip";
+@import "./assets/scss/bootstrap-overrides/datepicker";
+@import "./assets/scss/bootstrap-overrides/rating";
+@import "./assets/scss/bootstrap-overrides/sortable";
+@import "./assets/scss/bootstrap-overrides/time-picker";
+
+
+// Vendor Overrides
+@import "./assets/scss/vendor-overrides/ngx-scrollbar";
+@import "./assets/scss/vendor-overrides/ng-chartist";
+@import "./assets/scss/vendor-overrides/angular-datatables";
+@import "./assets/scss/vendor-overrides/ng-select";
+@import "./assets/scss/vendor-overrides/ngx-dropzone";
+@import "./assets/scss/vendor-overrides/ng5-slider";
+@import "./assets/scss/vendor-overrides/jqvmap";
+@import "./assets/scss/vendor-overrides/quill";
+
+
+
+//============================================
+// Generate Margin Class
+// margin, margin-top, margin-bottom, margin-left, margin-right
+//============================================
+.m-0 {
+  margin: 0px !important;
+}
+
+.m-t-0 {
+  margin-top: 0px !important;
+}
+
+.m-b-0 {
+  margin-bottom: 0px !important;
+}
+
+.m-l-0 {
+  margin-left: 0px !important;
+}
+
+.m-r-0 {
+  margin-right: 0px !important;
+}
+
+.m-5 {
+  margin: 5px !important;
+}
+
+.m-t-5 {
+  margin-top: 5px !important;
+}
+
+.m-b-5 {
+  margin-bottom: 5px !important;
+}
+
+.m-l-5 {
+  margin-left: 5px !important;
+}
+
+.m-r-5 {
+  margin-right: 5px !important;
+}
+
+.m-10 {
+  margin: 10px !important;
+}
+
+.m-t-10 {
+  margin-top: 10px !important;
+}
+
+.m-b-10 {
+  margin-bottom: 10px !important;
+}
+
+.m-l-10 {
+  margin-left: 10px !important;
+}
+
+.m-r-10 {
+  margin-right: 10px !important;
+}
+
+.m-15 {
+  margin: 15px !important;
+}
+
+.m-t-15 {
+  margin-top: 15px !important;
+}
+
+.m-b-15 {
+  margin-bottom: 15px !important;
+}
+
+.m-l-15 {
+  margin-left: 15px !important;
+}
+
+.m-r-15 {
+  margin-right: 15px !important;
+}
+
+.m-20 {
+  margin: 20px !important;
+}
+
+.m-t-20 {
+  margin-top: 20px !important;
+}
+
+.m-b-20 {
+  margin-bottom: 20px !important;
+}
+
+.m-l-20 {
+  margin-left: 20px !important;
+}
+
+.m-r-20 {
+  margin-right: 20px !important;
+}
+
+.m-25 {
+  margin: 25px !important;
+}
+
+.m-t-25 {
+  margin-top: 25px !important;
+}
+
+.m-b-25 {
+  margin-bottom: 25px !important;
+}
+
+.m-l-25 {
+  margin-left: 25px !important;
+}
+
+.m-r-25 {
+  margin-right: 25px !important;
+}
+
+.m-30 {
+  margin: 30px !important;
+}
+
+.m-t-30 {
+  margin-top: 30px !important;
+}
+
+.m-b-30 {
+  margin-bottom: 30px !important;
+}
+
+.m-l-30 {
+  margin-left: 30px !important;
+}
+
+.m-r-30 {
+  margin-right: 30px !important;
+}
+
+
+//============================================
+// Generate Padding Class
+// padding, padding-top, padding-bottom, padding-left, padding-right
+//============================================
+
+.p-0 {
+  padding: 0px !important;
+}
+
+.p-t-0 {
+  padding-top: 0px !important;
+}
+
+.p-b-0 {
+  padding-bottom: 0px !important;
+}
+
+.p-l-0 {
+  padding-left: 0px !important;
+}
+
+.p-r-0 {
+  padding-right: 0px !important;
+}
+
+.p-5 {
+  padding: 5px !important;
+}
+
+.p-t-5 {
+  padding-top: 5px !important;
+}
+
+.p-b-5 {
+  padding-bottom: 5px !important;
+}
+
+.p-l-5 {
+  padding-left: 5px !important;
+}
+
+.p-r-5 {
+  padding-right: 5px !important;
+}
+
+.p-10 {
+  padding: 10px !important;
+}
+
+.p-t-10 {
+  padding-top: 10px !important;
+}
+
+.p-b-10 {
+  padding-bottom: 10px !important;
+}
+
+.p-l-10 {
+  padding-left: 10px !important;
+}
+
+.p-r-10 {
+  padding-right: 10px !important;
+}
+
+.p-15 {
+  padding: 15px !important;
+}
+
+.p-t-15 {
+  padding-top: 15px !important;
+}
+
+.p-b-15 {
+  padding-bottom: 15px !important;
+}
+
+.p-l-15 {
+  padding-left: 15px !important;
+}
+
+.p-r-15 {
+  padding-right: 15px !important;
+}
+
+.p-20 {
+  padding: 20px !important;
+}
+
+.p-t-20 {
+  padding-top: 20px !important;
+}
+
+.p-b-20 {
+  padding-bottom: 20px !important;
+}
+
+.p-l-20 {
+  padding-left: 20px !important;
+}
+
+.p-r-20 {
+  padding-right: 20px !important;
+}
+
+.p-25 {
+  padding: 25px !important;
+}
+
+.p-t-25 {
+  padding-top: 25px !important;
+}
+
+.p-b-25 {
+  padding-bottom: 25px !important;
+}
+
+.p-l-25 {
+  padding-left: 25px !important;
+}
+
+.p-r-25 {
+  padding-right: 25px !important;
+}
+
+.p-30 {
+  padding: 30px !important;
+}
+
+.p-t-30 {
+  padding-top: 30px !important;
+}
+
+.p-b-30 {
+  padding-bottom: 30px !important;
+}
+
+.p-l-30 {
+  padding-left: 30px !important;
+}
+
+.p-r-30 {
+  padding-right: 30px !important;
+}
+
+
+//============================================
+// Generate Font-Size Classes (8px - 20px)
+//============================================
+.f-8 {
+  font-size: 8px !important;
+}
+
+.f-9 {
+  font-size: 9px !important;
+}
+
+.f-10 {
+  font-size: 10px !important;
+}
+
+.f-11 {
+  font-size: 11px !important;
+}
+
+.f-12 {
+  font-size: 12px !important;
+}
+
+.f-13 {
+  font-size: 13px !important;
+}
+
+.f-14 {
+  font-size: 14px !important;
+}
+
+.f-15 {
+  font-size: 15px !important;
+}
+
+.f-16 {
+  font-size: 16px !important;
+}
+
+.f-17 {
+  font-size: 17px !important;
+}
+
+.f-18 {
+  font-size: 18px !important;
+}
+
+.f-19 {
+  font-size: 19px !important;
+}
+
+.f-20 {
+  font-size: 20px !important;
+}
+
+
+//============================================
+// Font Weight
+//============================================
+.f-300 {
+  font-weight: 300 !important;
+}
+
+.f-400 {
+  font-weight: 400 !important;
+}
+
+.f-500 {
+  font-weight: 500 !important;
+}
+
+.f-700 {
+  font-weight: 700 !important;
+}
+
+
+//============================================
+// Material Background Colors
+//============================================
+.bgm-white {
+  background-color: #ffffff !important;
+}
+
+.c-white {
+  color: #ffffff !important;
+}
+
+.bgm-black {
+  background-color: #000000 !important;
+}
+
+.c-black {
+  color: #000000 !important;
+}
+
+.bgm-brown {
+  background-color: #795548 !important;
+}
+
+.c-brown {
+  color: #795548 !important;
+}
+
+.bgm-pink {
+  background-color: #e91e63 !important;
+}
+
+.c-pink {
+  color: #e91e63 !important;
+}
+
+.bgm-red {
+  background-color: #f44336 !important;
+}
+
+.c-red {
+  color: #f44336 !important;
+}
+
+.bgm-blue {
+  background-color: #2196f3 !important;
+}
+
+.c-blue {
+  color: #2196f3 !important;
+}
+
+.bgm-purple {
+  background-color: #9c27b0 !important;
+}
+
+.c-purple {
+  color: #9c27b0 !important;
+}
+
+.bgm-deeppurple {
+  background-color: #673ab7 !important;
+}
+
+.c-deeppurple {
+  color: #673ab7 !important;
+}
+
+.bgm-lightblue {
+  background-color: #03a9f4 !important;
+}
+
+.c-lightblue {
+  color: #03a9f4 !important;
+}
+
+.bgm-cyan {
+  background-color: #00bcd4 !important;
+}
+
+.c-cyan {
+  color: #00bcd4 !important;
+}
+
+.bgm-teal {
+  background-color: #009688 !important;
+}
+
+.c-teal {
+  color: #009688 !important;
+}
+
+.bgm-green {
+  background-color: #4caf50 !important;
+}
+
+.c-green {
+  color: #4caf50 !important;
+}
+
+.bgm-lightgreen {
+  background-color: #8bc34a !important;
+}
+
+.c-lightgreen {
+  color: #8bc34a !important;
+}
+
+.bgm-lime {
+  background-color: #cddc39 !important;
+}
+
+.c-lime {
+  color: #cddc39 !important;
+}
+
+.bgm-yellow {
+  background-color: #ffeb3b !important;
+}
+
+.c-yellow {
+  color: #ffeb3b !important;
+}
+
+.bgm-amber {
+  background-color: #ffc107 !important;
+}
+
+.c-amber {
+  color: #ffc107 !important;
+}
+
+.bgm-orange {
+  background-color: #ff9800 !important;
+}
+
+.c-orange {
+  color: #ff9800 !important;
+}
+
+.bgm-deeporange {
+  background-color: #ff5722 !important;
+}
+
+.c-deeporange {
+  color: #ff5722 !important;
+}
+
+.bgm-gray {
+  background-color: #9e9e9e !important;
+}
+
+.c-gray {
+  color: #9e9e9e !important;
+}
+
+.bgm-bluegray {
+  background-color: #607d8b !important;
+}
+
+.c-bluegray {
+  color: #607d8b !important;
+}
+
+.bgm-indigo {
+  background-color: #3f51b5 !important;
+}
+
+.c-indigo {
+  color: #3f51b5 !important;
+}
+
+
+//============================================
+// Generate Cursor Pointers
+//============================================
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.cursor-disabled {
+  cursor: no-drop !important;
+} 
+
+
+//============================================
+// AMA Custom Button Colors
+//============================================
+.btn-ama-custom-red {
+  color: #fff;
+  background-color: $ama-custom-red;
+  border-color: $ama-custom-red;
+}
+
+.btn-ama-custom-red:hover {
+  color: #fff;
+  background-color: #cf2334;
+  border-color: #bd2130;
+}
+
+.btn-ama-custom-red:focus, .btn-ama-custom-red.focus {
+  color: #fff;
+  background-color: #c82333;
+  border-color: #bd2130;
+  box-shadow: 0 0 0 0.2rem rgba(225, 83, 97, 0.5);
+}
+
+.btn-ama-custom-red.disabled, .btn-ama-custom-red:disabled {
+  color: #fff;
+  background-color: $ama-custom-red;
+  border-color: $ama-custom-red;
+}
+
+.btn-ama-custom-purple {
+  color: #fff;
+  background-color: $ama-custom-purple;
+  border-color: $ama-custom-purple;
+}
+
+.btn-ama-custom-purple:hover {
+  color: #fff;
+  background-color: #4342ac;
+  border-color: #3e3c9c;
+}
+
+.btn-ama-custom-purple:focus, .btn-ama-custom-purple.focus {
+  color: #fff;
+  background-color: #4342ac;
+  border-color: #4342ac;
+  box-shadow: 0 0 0 0.2rem #726ff8;
+}
+
+.btn-ama-custom-purple.disabled, .btn-ama-custom-purple:disabled {
+  color: #fff;
+  background-color: $ama-custom-purple;
+  border-color: $ama-custom-purple;
+}
+
+.btn-white {
+  color: #3b3b3b;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.btn-white:hover {
+  color: #3b3b3b;
+  background-color: #f8f8f8;
+  border-color: #f8f8f8;
+}
+
+.btn-white:focus, .btn-white.focus {
+  color: #3b3b3b;
+  background-color: #f8f8f8;
+  border-color: #f8f8f8;
+  box-shadow: 0 0 0 0.2rem #c2c2c2;
+}
+
+.btn-white.disabled, .btn-white:disabled {
+  color: #fff;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+
+//============================================
+// Shadow for buttons and badges
+//============================================
+.btn-shadow {
+  box-shadow: 3px 4px 5px -2px #868686;
+}
+
+
+//============================================
+// Float Position
+//============================================
+.pull-right {
+    float:right !important;
+}
+
+.pull-left {
+    float:left !important;
+}
+
+
+//============================================
+// Overrides for data tiles
+//============================================
+.card-tiles {
+    padding: .7rem !important;
+}
+
+.card-tiles-body {
+    padding: 1rem .8rem .5rem !important;
+}
+
+.table-tiles-body {
+    padding: 0 0 !important;
+}

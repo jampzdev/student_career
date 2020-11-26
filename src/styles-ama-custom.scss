@@ -1,0 +1,57 @@
+@import "./assets/scss/scss-imports";
+
+
+//============================================
+// Global style for Headers
+//============================================
+.header-button {
+    & > button {
+        width: 8rem;
+        border-radius: .3rem;
+    }
+}
+
+.header-search-bar {
+  position: relative;
+
+  input[type="text"] {
+    width: 250px;
+    border: 0;
+    border-radius: $border-radius;
+    background-color: $white;
+    color: $input-color;
+    padding: 0 1rem 0 3rem;
+    height: 2rem;
+    margin-bottom: 1rem;
+    box-shadow: 3px 4px 5px -2px #868686;
+    transition: box-shadow 300ms;
+
+    @include placeholder {
+      color: $input-placeholder-color;
+    }
+
+    &:focus {
+      box-shadow: 0 7px 12px rgba($black, 0.125);
+    }
+  }
+
+  &:before {
+    content: '';
+    @include font-icon('\f1c3', 1.3rem);
+    position: absolute;
+    top: 0.1rem;
+    left: 1.1rem;
+    z-index: 1;
+  }
+}
+
+
+//============================================
+// Global style for Modals
+//============================================
+.modal-button {
+    & > button {
+        width: 8rem;
+        border-radius: .3rem;
+    }
+}

@@ -1,0 +1,251 @@
+<header class="content__title">
+  <div class="row">
+    <div class="col-sm-6">
+      <h3>Books</h3>
+    </div>
+    <div class="col-sm-6 header-button">
+      <button type="button" class="btn btn-primary btn-sm btn-shadow pull-right"
+        (click)="AddBook.show();formDefaultSettings()"><i class="zmdi zmdi-plus"></i>  ADD NEW</button>
+      <div class="col-sm-12 header-button">
+        <div class="header-search-bar m-r-20 pull-right">
+          <input type="text" class="form-control search-box" [(ngModel)]="search_book" (keydown.enter)="getBooks()"
+            placeholder="Search...">
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<div class="row p-l-30">
+  <div class="col-sm-12 card">
+  
+    <div class="table-responsive">
+      <table class="table p-t-20 table-striped table-hover">
+        <thead>
+          <th></th>
+          <th>
+            <h4>Book Info</h4>
+          </th>
+          <th>
+            <h4>Owner</h4>
+          </th>
+          <th>
+            <h4>Location</h4>
+          </th>
+          <th>
+            <h4>Status</h4>
+          </th>
+        </thead>
+        <tr *ngIf="books_list.length ==0">
+          <td colspan="4" align="center">
+            No record(s) to show
+          </td>
+        </tr>
+        <tr *ngFor="let dataBooks of books_list">
+          <td class="table-tiles-body" style="width: 120px; text-align: center; vertical-align: middle">
+            <a (click)="EditBook.show();editBook(dataBooks)">
+              <i class="zmdi zmdi-edit zmdi-hc-fw" style="font-size: 1.6rem; color: green"></i>
+            </a>
+            <a (click)="ViewBook.show();viewBook(dataBooks);this.getComments()">
+              <i class="zmdi zmdi-eye zmdi-hc-fw" style="font-size: 1.6rem; color: #37368E"></i>
+            </a>
+          </td>
+          <td class="table-tiles-body">
+            <h5>{{ dataBooks.title }}</h5>
+            {{ dataBooks.author }}
+          </td>
+          <td>
+            {{dataBooks.owner}}
+          </td>
+          <td>
+            {{ dataBooks.location }}
+          </td>
+          <td class="table-tiles-body">
+            <span *ngIf="dataBooks.status == 'Available'" class="badge badge-success">{{ dataBooks.status }}</span>
+            <span *ngIf="dataBooks.status != 'Available'" class="badge badge-danger">{{ dataBooks.status }}</span>
+          </td>
+        </tr>
+        <!-- <tr>
+            <td class="table-tiles-body">
+              <i class="zmdi zmdi-calendar-check zmdi-hc-fw"></i> {{ dataUser.created_at }} <br>
+              <i class="zmdi zmdi-calendar-check zmdi-hc-fw"></i> {{ dataUser.created_at }}
+            </td>
+          </tr> -->
+      </table>
+    </div>
+  
+  </div>
+
+</div>
+
+<div bsModal #AddBook="bs-modal" class="modal fade" [config]="{ ignoreBackdropClick: true }">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-custom-width">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title pull-left">ADD NEW BOOK</h5>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label><b>TITLE</b><span class="c-red">*</span></label>
+                <input type="text" class="form-control" [(ngModel)]="title" maxlength="100" />
+              </div>
+              <div class="form-group">
+                <label><b>AUTHOR</b><span class="c-red">*</span></label>
+                <input type="text" class="form-control" [(ngModel)]="author" maxlength="100" />
+              </div>
+              <div class="form-group">
+                <label><b>OWNER</b><span class="c-red">*</span></label>
+                <input type="text" class="form-control" [(ngModel)]="owner" maxlength="100" />
+              </div>
+              <div class="form-group">
+                <label><b>LOCATION</b><span class="c-red">*</span></label>
+                <input type="text" class="form-control" [(ngModel)]="location" maxlength="100" />
+              </div>
+              <div class="form-group">
+                <label><b>STATUS</b><span class="c-red"></span></label>
+                <input type="text" class="form-control" [(ngModel)]="status" disabled/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="saveBook()">SAVE</button>
+          <button type="button" class="btn btn-danger" (click)="AddBook.hide();">CLOSE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div bsModal #EditBook="bs-modal" class="modal fade" [config]="{ ignoreBackdropClick: true }">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-custom-width">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title pull-left">ADD NEW BOOK</h5>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label><b>TITLE</b><span class="c-red">*</span></label>
+                <input type="text" class="form-control" [(ngModel)]="title" maxlength="100" />
+              </div>
+              <div class="form-group">
+                <label><b>AUTHOR</b><span class="c-red">*</span></label>
+                <input type="text" class="form-control" [(ngModel)]="author" maxlength="100" />
+              </div>
+              <div class="form-group">
+                <label><b>OWNER</b><span class="c-red">*</span></label>
+                <input type="text" class="form-control" [(ngModel)]="owner" maxlength="100" />
+              </div>
+              <div class="form-group">
+                <label><b>LOCATION</b><span class="c-red">*</span></label>
+                <input type="text" class="form-control" [(ngModel)]="location" maxlength="100" />
+              </div>
+              <div class="form-group">
+                <label><b>STATUS</b><span class="c-red"></span></label>
+                <input type="text" class="form-control" [(ngModel)]="status" disabled />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="updateBook()">UPDATE</button>
+          <button type="button" class="btn btn-danger" (click)="EditBook.hide();">CLOSE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div bsModal #ViewBook="bs-modal" class="modal fade" [config]="{ ignoreBackdropClick: true }">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-custom-width">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title pull-left">Book Details</h1>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label><b>TITLE</b></label>
+                <h5>{{ title }}</h5>
+              </div>
+              <div class="form-group">
+                <label><b>AUTHOR</b></label>
+                <h5>{{ author }}</h5>
+              </div>
+              <div class="form-group">
+                <label><b>OWNER</b></label>
+                <h5>{{ owner }}</h5>
+              </div>
+              <div class="form-group">
+                <label><b>LOCATION</b></label>
+                <h5>{{ location }}</h5>
+              </div>
+              <div class="form-group">
+                <label><b>STATUS</b></label>
+
+                <h5>
+                  <div *ngIf="status == 'Available'">
+                    <i class="zmdi zmdi-check zmdi-hc-fw" style="font-size: 1.6rem; color: green"></i>
+                    {{ status }}
+                  </div>
+
+                  <div *ngIf="status != 'Available'">
+                    <i class="zmdi zmdi-close zmdi-hc-fw" style="font-size: 1.6rem; color: red"></i>
+                    Borrowed by {{ user_name }} @ {{ checked_out_date }}
+                  </div>
+
+                </h5>
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-sm-12">
+              <hr>
+              <h4>Comments</h4>
+              <table class="table">
+                <tr *ngIf="book_comments.length == 0">
+                  <td align="center">
+                    <h5>No comments to show.</h5>
+                  </td>
+                </tr>
+                <tr *ngFor="let data of book_comments">
+                  <td>
+                    <span class="comment-section">
+                      "{{data.comment}}"
+                    </span>
+                    <br>
+                    <span class="pull-right" align="center">
+                      -{{data.user_name}}
+                      <br>
+                      {{ data.comment_date }}
+                    </span>
+                  </td>
+                </tr>
+              </table>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="ViewBook.hide();getBooks();">CLOSE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

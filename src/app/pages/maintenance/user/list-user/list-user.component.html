@@ -1,0 +1,57 @@
+<header class="content__title">
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Users</h3>
+        </div>
+        <div class="col-sm-6 header-button">
+            <button type="button" class="btn btn-ama-custom-purple btn-sm btn-shadow pull-right" [routerLink]="['/user/maintenance/user/add-user']">NEW</button>
+            <div class="header-search-bar m-r-20 pull-right">
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="row">
+    <div class="col-sm-4 card-tiles" *ngFor="let dataUser of user_list">
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body card-tiles-body">
+                    <!-- Actual data content, after all of the formatting incards -->
+                    <table class="table">
+                        <tr>
+                            <td class="table-tiles-body" style="width: 20%; text-align: center; vertical-align: middle">
+                                <a [routerLink]="['/user/maintenance/user/edit-user']">
+                                    <i class="zmdi zmdi-edit zmdi-hc-fw" style="font-size: 1.6rem; color: #37368E"></i>
+                                </a>
+                            </td>
+                            <td class="table-tiles-body">
+                                <h4>{{ dataUser.full_name }}</h4>
+                                {{ dataUser.email }} <br>
+                                {{ dataUser.position }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="table-tiles-body" style="text-align: center;">
+                                <i *ngIf="dataUser.is_active == true" class="zmdi zmdi-male zmdi-hc-fw" style="font-size: 1.6rem; color: green"></i>
+                                <i *ngIf="dataUser.is_active == false" class="zmdi zmdi-male zmdi-hc-fw" style="font-size: 1.6rem; color: red"></i>
+                            </td>
+                            <td class="table-tiles-body">
+                                {{ dataUser.is_active == true ? 'Active' : 'Inactive' }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="table-tiles-body">
+                                <i class="zmdi zmdi-calendar-check zmdi-hc-fw"></i> {{ dataUser.created_at }} <br>
+                                <i class="zmdi zmdi-calendar-check zmdi-hc-fw"></i> {{ dataUser.created_at }}
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

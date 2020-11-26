@@ -1,0 +1,45 @@
+@import "../../../assets/scss/scss-imports";
+
+.login__block {
+    border-radius: 5px;
+}
+
+.login-custom-header {
+    padding: 5px 0 5px;
+}
+
+.login-custom-footer {
+    padding: 1rem 2rem 0;
+
+    & > button {
+        // background-color: $ama-custom-red;
+        color: $white;
+        width: 100%;
+        border-radius: .4rem;
+        font-weight: $font-weight-bold;
+    }
+}
+
+.login-fixed-button {
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 120px;
+
+    & > button {
+        border-radius: .4rem;
+        font-weight: $font-weight-bold;
+        width: 100%;
+    }
+}
+
+.form-group--left {
+  &,
+  .form-control {
+    text-align: left;
+  }
+}
+
+.login {
+    background-color: #aaa;
+}
